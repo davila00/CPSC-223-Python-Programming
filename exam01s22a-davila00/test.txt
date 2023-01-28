@@ -1,0 +1,213 @@
+.....FFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_list_int (__main__.Test06_enter_room_greater_than_4)
+*** Test06 ****  GIVEN: enter='1-5' *** EXPECT: Return value 906
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 55, in test_list_int
+    self.assertEqual(transition(tracker=[], id='a4f', enter='1-5'),906)
+AssertionError: 905 != 906
+
+======================================================================
+FAIL: test_list_int (__main__.Test07_invalid_move_enter_floor_2_from_outside)
+*** Test07 ****  GIVEN: tracker=empty id='afa' enter='2-1' *** EXPECT: Return value 999
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 64, in test_list_int
+    self.assertEqual(transition(tracker=tracker, id='a4f', enter='2-1'),999)
+AssertionError: 905 != 999
+
+======================================================================
+FAIL: test_list_int (__main__.Test08_invalid_move_enter_floor_3_from_outside)
+*** Test08 ****  GIVEN: tracker=empty id='afa' enter='3-1' *** EXPECT: Return value 999
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 73, in test_list_int
+    self.assertEqual(transition(tracker=tracker, id='a4f', enter='3-1'),999)
+AssertionError: 905 != 999
+
+======================================================================
+FAIL: test_list_int (__main__.Test09_invalid_move_enter_floor_2_from_floor_1_room_3)
+*** Test09 ****  GIVEN: tracker=[[[],[],['a4f'],[]],[[],[],[],[]],[[],[],[],[]]] id='a4f' enter='2-4' *** EXPECT: Return value 999
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 82, in test_list_int
+    self.assertEqual(transition(tracker=tracker, id='a4f', enter='2-4'),999)
+AssertionError: 905 != 999
+
+======================================================================
+FAIL: test_list_int (__main__.Test10_invalid_move_enter_floor_3_from_floor_1_room_3)
+*** Test10 ****  GIVEN: tracker=[[[],[],['a4f'],[]],[[],[],[],[]],[[],[],[],[]]] id='a4f' enter='3-2' *** EXPECT: Return value 999
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 91, in test_list_int
+    self.assertEqual(transition(tracker=tracker, id='a4f', enter='3-2'),999)
+AssertionError: 905 != 999
+
+======================================================================
+FAIL: test_list_int (__main__.Test11_invalid_move_enter_floor_3_from_floor_2_room_3)
+*** Test11 ****  GIVEN: tracker=[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]] id='a4f' enter='3-2' *** EXPECT: Return value 999
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 100, in test_list_int
+    self.assertEqual(transition(tracker=tracker, id='a4f', enter='3-2'),999)
+AssertionError: 905 != 999
+
+======================================================================
+FAIL: test_list_int (__main__.Test12_valid_move_enter_floor_1_room_1_from_outside)
+*** Test12 ****  GIVEN: tracker=[[[],[],[],[]],[[],[],[],[]],[[],[],[],[]]] id='a4f' enter='1-1' *** EXPECT: tracker=[[['a4f'],[],[],[]],[[],[],[],[]],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 110, in test_list_int
+    self.assertEqual(tracker,[[['a4f'],[],[],[]],[[],[],[],[]],[[],[],[],[]]])
+AssertionError: Lists differ: [[[], [], [], []], [[], [], [], []], [[], [], [], []]] != [[['a4f'], [], [], []], [[], [], [], []], [[], [], [], []]]
+
+First differing element 0:
+[[], [], [], []]
+[['a4f'], [], [], []]
+
+- [[[], [], [], []], [[], [], [], []], [[], [], [], []]]
++ [[['a4f'], [], [], []], [[], [], [], []], [[], [], [], []]]
+
+======================================================================
+FAIL: test_list_int (__main__.Test13_valid_move_enter_floor_1_room_4_from_floor_1_room_1)
+*** Test13 ****  GIVEN: tracker=[[['a4f'],[],[],[]],[[],[],[],[]],[[],[],[],[]]] id='a4f' enter='1-4' *** EXPECT: tracker=[[[],[],[],['a4f']],[[],[],[],[]],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 120, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],['a4f']],[[],[],[],[]],[[],[],[],[]]])
+AssertionError: Lists differ: [[['a4f'], [], [], []], [[], [], [], []], [[], [], [], []]] != [[[], [], [], ['a4f']], [[], [], [], []], [[], [], [], []]]
+
+First differing element 0:
+[['a4f'], [], [], []]
+[[], [], [], ['a4f']]
+
+- [[['a4f'], [], [], []], [[], [], [], []], [[], [], [], []]]
++ [[[], [], [], ['a4f']], [[], [], [], []], [[], [], [], []]]
+
+======================================================================
+FAIL: test_list_int (__main__.Test14_valid_move_enter_floor_2_room_4_from_floor_1_room_4)
+*** Test14 ****  GIVEN: tracker=[[[],[],[],['a4f']],[[],[],[],[]],[[],[],[],[]]] id='a4f' enter='2-4' *** EXPECT: tracker=[[[],[],[],[]],[[],[],[],['a4f']],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 130, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],[]],[[],[],[],['a4f']],[[],[],[],[]]])
+AssertionError: Lists differ: [[[], [], [], ['a4f']], [[], [], [], []], [[], [], [], []]] != [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]]
+
+First differing element 0:
+[[], [], [], ['a4f']]
+[[], [], [], []]
+
+- [[[], [], [], ['a4f']], [[], [], [], []], [[], [], [], []]]
++ [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]]
+
+======================================================================
+FAIL: test_list_int (__main__.Test15_valid_move_enter_floor_2_room_2_from_floor_2_room_4)
+*** Test15 ****  GIVEN: tracker=[[[],[],[],[]],[[],[],[],['a4f']],[[],[],[],[]]] id='a4f' enter='2-2' *** EXPECT: tracker=[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 140, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]])
+AssertionError: Lists differ: [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]] != [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]]
+
+First differing element 1:
+[[], [], [], ['a4f']]
+[[], ['a4f'], [], []]
+
+- [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]]
+?                        --------
+
++ [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]]
+?                                +++  +++++
+
+
+======================================================================
+FAIL: test_list_int (__main__.Test16_valid_move_enter_floor_3_room_2_from_floor_2_room_2)
+*** Test16 ****  GIVEN: tracker=[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]] id='a4f' enter='3-2' *** EXPECT: tracker=[[[],[],[],[]],[[],[],[],[]],[[],['a4f'],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 150, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],[]],[[],[],[],[]],[[],['a4f'],[],[]]])
+AssertionError: Lists differ: [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]] != [[[], [], [], []], [[], [], [], []], [[], ['a4f'], [], []]]
+
+First differing element 1:
+[[], ['a4f'], [], []]
+[[], [], [], []]
+
+- [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]]
++ [[[], [], [], []], [[], [], [], []], [[], ['a4f'], [], []]]
+
+======================================================================
+FAIL: test_list_int (__main__.Test17_valid_move_enter_floor_2_room_2_from_floor_3_room_2)
+*** Test17 ****  GIVEN: tracker=[[[],[],[],[]],[[],[],[],[]],[[],['a4f'],[],[]]] id='a4f' enter='2-2' *** EXPECT: tracker=[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 160, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]])
+AssertionError: Lists differ: [[[], [], [], []], [[], [], [], []], [[], ['a4f'], [], []]] != [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]]
+
+First differing element 1:
+[[], [], [], []]
+[[], ['a4f'], [], []]
+
+- [[[], [], [], []], [[], [], [], []], [[], ['a4f'], [], []]]
++ [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]]
+
+======================================================================
+FAIL: test_list_int (__main__.Test18_valid_move_enter_floor_2_room_4_from_floor_2_room_2)
+*** Test18 ****  GIVEN: tracker=[[[],[],[],[]],[[],['a4f'],[],[]],[[],[],[],[]]] id='a4f' enter='2-4' *** EXPECT: tracker=[[[],[],[],[]],[[],[],[],['a4f']],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 170, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],[]],[[],[],[],['a4f']],[[],[],[],[]]])
+AssertionError: Lists differ: [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]] != [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]]
+
+First differing element 1:
+[[], ['a4f'], [], []]
+[[], [], [], ['a4f']]
+
+- [[[], [], [], []], [[], ['a4f'], [], []], [[], [], [], []]]
+?                                ---  -----
+
++ [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]]
+?                        ++++++++
+
+
+======================================================================
+FAIL: test_list_int (__main__.Test19_valid_move_enter_floor_1_room_4_from_floor_2_room_4)
+*** Test19 ****  GIVEN: tracker=[[[],[],[],[]],[[],[],[],['a4f']],[[],[],[],[]]] id='a4f' enter='1-4' *** EXPECT: tracker=[[[],[],[],['a4f']],[[],[],[],[]],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 180, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],['a4f']],[[],[],[],[]],[[],[],[],[]]])
+AssertionError: Lists differ: [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]] != [[[], [], [], ['a4f']], [[], [], [], []], [[], [], [], []]]
+
+First differing element 0:
+[[], [], [], []]
+[[], [], [], ['a4f']]
+
+- [[[], [], [], []], [[], [], [], ['a4f']], [[], [], [], []]]
++ [[[], [], [], ['a4f']], [[], [], [], []], [[], [], [], []]]
+
+======================================================================
+FAIL: test_list_int (__main__.Test20_valid_move_enter_outside_from_floor_1_room_1)
+*** Test20 ****  GIVEN: tracker=[[['a4f'],[],[],[]],[[],[],[],[]],[[],[],[],[]]] id='a4f' enter='1-0' *** EXPECT: tracker=[[[],[],[],[]],[[],[],[],[]],[[],[],[],[]]]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam01s22a-davila00/test.py", line 190, in test_list_int
+    self.assertEqual(tracker,[[[],[],[],[]],[[],[],[],[]],[[],[],[],[]]])
+AssertionError: Lists differ: [[['a4f'], [], [], []], [[], [], [], []], [[], [], [], []]] != [[[], [], [], []], [[], [], [], []], [[], [], [], []]]
+
+First differing element 0:
+[['a4f'], [], [], []]
+[[], [], [], []]
+
+- [[['a4f'], [], [], []], [[], [], [], []], [[], [], [], []]]
+?    -----
+
++ [[[], [], [], []], [[], [], [], []], [[], [], [], []]]
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.007s
+
+FAILED (failures=15)

@@ -1,0 +1,92 @@
+...FFF..F..F...F...FFF
+======================================================================
+FAIL: test_list_int (__main__.Test04_AddItemBarcodeTooLong)
+*** Test04 *** GIVEN: filename t99.dat does not exist *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.add_item(barcode="BC9001555", description="Paper") *** EXPECT: r = 109 ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 57, in test_list_int
+    self.assertEqual(r, 109)
+AssertionError: 100 != 109
+
+======================================================================
+FAIL: test_list_int (__main__.Test05_AddItemBarcodeDoesNotContainBC)
+*** Test05 *** GIVEN: filename t99.dat does not exist *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.add_item(barcode="XX9001", description="Paper") *** EXPECT: r = 109 ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 69, in test_list_int
+    self.assertEqual(r, 109)
+AssertionError: 100 != 109
+
+======================================================================
+FAIL: test_list_int (__main__.Test06_AddItemBarcodeEndsWithChar)
+*** Test06 *** GIVEN: filename t99.dat does not exist *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.add_item(barcode="BC900X", description="Paper") *** EXPECT: r = 109 ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 81, in test_list_int
+    self.assertEqual(r, 109)
+AssertionError: 100 != 109
+
+======================================================================
+FAIL: test_list_int (__main__.Test09_AddItemBarcodeValidDataWrite)
+*** Test09 *** GIVEN: filename t99.dat does not exist *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.add_item(barcode="BC9001", description="Paper") AND i = Inventory(filename='t99.dat') *** EXPECT: i.data = {"BC9001": ["Paper", 0]} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 119, in test_list_int
+    self.assertEqual(i.data, {"BC9001": ["Paper", 0]})
+AssertionError: 't99.dat' != {'BC9001': ['Paper', 0]}
+
+======================================================================
+FAIL: test_list_int (__main__.Test12_ModifyDescriptionBarcodeValidDataWrite)
+*** Test12 *** GIVEN: filename t99.dat contains {"BC9001": ["Paper", 7]} *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.modify_description(barcode="BC9001", description="Book") AND i = Inventory(filename='t99.dat')*** EXPECT: i.data = {"BC9001": ["Book", 7]} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 160, in test_list_int
+    self.assertEqual(i.data, {"BC9001": ["Book", 7]})
+AssertionError: 't99.dat' != {'BC9001': ['Book', 7]}
+
+======================================================================
+FAIL: test_list_int (__main__.Test16_AddQtyValidDataWrite)
+*** Test16 *** GIVEN: filename t99.dat contains {"BC9001": ["Paper", 7]} *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.add_qty(barcode="BC9001", qty=5) AND i = Inventory(filename='t99.dat')*** EXPECT: i.data = {"BC9001": ["Paper", 12]} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 213, in test_list_int
+    self.assertEqual(i.data, {"BC9001": ["Paper", 12]})
+AssertionError: 't99.dat' != {'BC9001': ['Paper', 12]}
+
+======================================================================
+FAIL: test_list_int (__main__.Test20_RemoveQtyValid)
+*** Test20 *** GIVEN: filename t99.dat does not exist *** IMPLEMENT: i = Inventory(filename='t99.dat') AND x = i.add_item(barcode="BC9001", description="Paper") AND x = i.add_qty(barcode="BC9001", qty=7) AND r = i.remove_qty(barcode="BC9001", qty=5) *** EXPECT: r = 100 ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 266, in test_list_int
+    self.assertEqual(r, 100)
+AssertionError: 103 != 100
+
+======================================================================
+FAIL: test_list_int (__main__.Test21_RemoveQtyValidDataWrite)
+*** Test21 *** GIVEN: filename t99.dat contains {"BC9001": ["Paper", 7]} *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.remove_qty(barcode="BC9001", qty=5) AND i = Inventory(filename='t99.dat')*** EXPECT: i.data = {"BC9001": ["Paper", 2]} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 281, in test_list_int
+    self.assertEqual(i.data, {"BC9001": ["Paper", 2]})
+AssertionError: {'BC9001': ['Paper', 7]} != {'BC9001': ['Paper', 2]}
+- {'BC9001': ['Paper', 7]}
+?                      ^
+
++ {'BC9001': ['Paper', 2]}
+?                      ^
+
+
+======================================================================
+FAIL: test_list_int (__main__.Test22_GetInventory)
+*** Test22 *** GIVEN: filename t99.dat contains {"BC9001": ["Paper", 1211], "BC9034": ["Notebook", 588], "BC9026": ["Computer", 49], "BC9072": ["Pencil", 147]} *** IMPLEMENT: i = Inventory(filename='t99.dat') AND r = i.get_inventory() *** EXPECT: r = "BC9001  Paper                1211
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/student/Documents/exam02s22a-davila00/test.py", line 295, in test_list_int
+    self.assertEqual(r, "BC9001  Paper                1211\nBC9034  Notebook              588\nBC9026  Computer               49\nBC9072  Pencil                147\n")
+AssertionError: None != 'BC9001  Paper                1211\nBC903[96 chars]47\n'
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.006s
+
+FAILED (failures=9)
